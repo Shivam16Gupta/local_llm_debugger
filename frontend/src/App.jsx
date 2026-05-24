@@ -28,7 +28,7 @@ export default function App() {
     if (mode === "stream") {
       setStreaming(true)
       try {
-        const res = await fetch("http://localhost:8000/api/analyze/stream", {
+        const res = await fetch("http://127.0.0.1:8000/api/analyze/stream", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ content: logContent }),
@@ -70,7 +70,7 @@ export default function App() {
     } else {
       // Full (non-streaming) mode
       try {
-        const res  = await fetch("http://localhost:8000/api/analyze", {
+        const res  = await fetch("http://127.0.0.1:8000/api/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ content: logContent }),
