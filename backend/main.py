@@ -70,8 +70,8 @@ def parse(payload: LogPayload):
         "warn_count":  sum(1 for e in entries if e.level in ("WARN", "WARNING")),
         "entries": [e.to_dict() for e in entries],
     }
-
-
+ 
+ 
 @app.post("/api/analyze")
 async def analyze(payload: LogPayload):
     """
