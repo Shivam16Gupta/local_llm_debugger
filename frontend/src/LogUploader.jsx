@@ -21,7 +21,7 @@ export function LogUploader({ onLogsLoaded }) {
     setLoading(true)
     setError('')
     try {
-      const res  = await fetch('/api/parse', {
+      const res  = await fetch('http://localhost:8000/api/parse', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content }),

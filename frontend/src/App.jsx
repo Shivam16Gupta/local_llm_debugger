@@ -5,7 +5,7 @@ import { ResultPanel, StreamingPanel } from './ResultPanel'
 // ── Streaming fetch helper ────────────────────────────────────────────────────
 async function analyzeStream(logText, onChunk, onDone, onError) {
   try {
-    const res = await fetch('/api/analyze/stream', {
+    const res = await fetch('http://localhost:8000/api/analyze/stream', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: logText }),
@@ -72,7 +72,7 @@ export default function App() {
     } else {
       // Full (non-streaming) mode
       try {
-        const res  = await fetch('/api/analyze', {
+        const res  = await fetch('http://localhost:8000/api/analyze', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ content: logContent }),
